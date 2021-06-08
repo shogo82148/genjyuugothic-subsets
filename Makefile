@@ -49,3 +49,51 @@ package:
 	./package.pl GenJyuuGothic-Monospace-Medium GenJyuuGothicMonospace 500
 	./package.pl GenJyuuGothic-Monospace-Bold GenJyuuGothicMonospace 700
 	./package.pl GenJyuuGothic-Monospace-Heavy GenJyuuGothicMonospace 900
+
+	./package.pl GenJyuuGothicL-ExtraLight GenJyuuGothicL 250
+	./package.pl GenJyuuGothicL-Light GenJyuuGothicL 300
+	./package.pl GenJyuuGothicL-Normal GenJyuuGothicL 350
+	./package.pl GenJyuuGothicL-Regular GenJyuuGothicL 400
+	./package.pl GenJyuuGothicL-Medium GenJyuuGothicL 500
+	./package.pl GenJyuuGothicL-Bold GenJyuuGothicL 700
+	./package.pl GenJyuuGothicL-Heavy GenJyuuGothicL 900
+
+	./package.pl GenJyuuGothicL-P-ExtraLight GenJyuuGothicLP 250
+	./package.pl GenJyuuGothicL-P-Light GenJyuuGothicLP 300
+	./package.pl GenJyuuGothicL-P-Normal GenJyuuGothicLP 350
+	./package.pl GenJyuuGothicL-P-Regular GenJyuuGothicLP 400
+	./package.pl GenJyuuGothicL-P-Medium GenJyuuGothicLP 500
+	./package.pl GenJyuuGothicL-P-Bold GenJyuuGothicLP 700
+	./package.pl GenJyuuGothicL-P-Heavy GenJyuuGothicLP 900
+
+	./package.pl GenJyuuGothicL-Monospace-ExtraLight GenJyuuGothicLMonospace 250
+	./package.pl GenJyuuGothicL-Monospace-Light GenJyuuGothicLMonospace 300
+	./package.pl GenJyuuGothicL-Monospace-Normal GenJyuuGothicLMonospace 350
+	./package.pl GenJyuuGothicL-Monospace-Regular GenJyuuGothicLMonospace 400
+	./package.pl GenJyuuGothicL-Monospace-Medium GenJyuuGothicLMonospace 500
+	./package.pl GenJyuuGothicL-Monospace-Bold GenJyuuGothicLMonospace 700
+	./package.pl GenJyuuGothicL-Monospace-Heavy GenJyuuGothicLMonospace 900
+
+	./package.pl GenJyuuGothicX-ExtraLight GenJyuuGothicX 250
+	./package.pl GenJyuuGothicX-Light GenJyuuGothicX 300
+	./package.pl GenJyuuGothicX-Normal GenJyuuGothicX 350
+	./package.pl GenJyuuGothicX-Regular GenJyuuGothicX 400
+	./package.pl GenJyuuGothicX-Medium GenJyuuGothicX 500
+	./package.pl GenJyuuGothicX-Bold GenJyuuGothicX 700
+	./package.pl GenJyuuGothicX-Heavy GenJyuuGothicX 900
+
+	./package.pl GenJyuuGothicX-P-ExtraLight GenJyuuGothicXP 250
+	./package.pl GenJyuuGothicX-P-Light GenJyuuGothicXP 300
+	./package.pl GenJyuuGothicX-P-Normal GenJyuuGothicXP 350
+	./package.pl GenJyuuGothicX-P-Regular GenJyuuGothicXP 400
+	./package.pl GenJyuuGothicX-P-Medium GenJyuuGothicXP 500
+	./package.pl GenJyuuGothicX-P-Bold GenJyuuGothicXP 700
+	./package.pl GenJyuuGothicX-P-Heavy GenJyuuGothicXP 900
+
+	./package.pl GenJyuuGothicX-Monospace-ExtraLight GenJyuuGothicXMonospace 250
+	./package.pl GenJyuuGothicX-Monospace-Light GenJyuuGothicXMonospace 300
+	./package.pl GenJyuuGothicX-Monospace-Normal GenJyuuGothicXMonospace 350
+	./package.pl GenJyuuGothicX-Monospace-Regular GenJyuuGothicXMonospace 400
+	./package.pl GenJyuuGothicX-Monospace-Medium GenJyuuGothicXMonospace 500
+	./package.pl GenJyuuGothicX-Monospace-Bold GenJyuuGothicXMonospace 700
+	./package.pl GenJyuuGothicX-Monospace-Heavy GenJyuuGothicXMonospace 900
