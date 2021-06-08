@@ -12,9 +12,11 @@ RUN curl -sSL -o fonttools.tar.gz https://github.com/fonttools/fonttools/archive
 RUN apt-get update && apt-get install -y parallel && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY genjyuugothic.zip /genjyuugothic/genjyuugothic.zip
+COPY genjyuugothic-x.zip /genjyuugothic/genjyuugothic-x.zip
+COPY genjyuugothic-l.zip /genjyuugothic/genjyuugothic-l.zip
 COPY unicode-range /genjyuugothic/unicode-range
 WORKDIR /genjyuugothic
-RUN unzip genjyuugothic.zip
+RUN unzip -o genjyuugothic.zip && unzip -o genjyuugothic-x.zip && unzip -o genjyuugothic-l.zip
 
 RUN for FONT in *.ttf; do \
     mkdir -p ./dist/${FONT%.ttf} && \
