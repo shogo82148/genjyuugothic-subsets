@@ -41,7 +41,7 @@ font-family: "GenJyuuGothicXP";
 font-family: "GenJyuuGothicXMonospace";
 ```
 
-[https://shogo82148.github.io/genjyuugothic-subsets/][https://shogo82148.github.io/genjyuugothic-subsets/] から実際の利用例を確認できます。
+[https://shogo82148.github.io/genjyuugothic-subsets/](https://shogo82148.github.io/genjyuugothic-subsets/) から実際の利用例を確認できます。
 
 ## License
 
