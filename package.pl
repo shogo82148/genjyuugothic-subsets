@@ -11,6 +11,15 @@ my $hash = `cd subsets/$name; sha256sum *.woff2 | sha256sum -`;
 $hash =~ s/[^0-9a-fA-F]//g;
 
 open my $fh, ">", "dist/$name/$name.css";
+
+print $fh <<"END";
+/*
+copyright 2021 Ichinose Shogo (@shogo82148) https://github.com/shogo82148/genjyuugothic-subsets
+copyright 2014 自家製フォント工房 by MM. http://jikasei.me/font/genjyuu/
+M+ OUTLINE FONTS is under the M+ FONTS LICENSE.
+*/
+END
+
 for my $i(0..119) {
     open my $unicode, "<", "unicode-range/$i.txt";
     my $range = do { local $/; <$unicode>};
