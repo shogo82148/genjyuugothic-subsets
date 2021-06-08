@@ -17,3 +17,29 @@ subsets: genjyuugothic.zip unicode-range
 	rm -rf subsets
 	docker cp genjyuugothic-fonttools-tmp:/genjyuugothic/dist subsets
 	docker rm genjyuugothic-fonttools-tmp
+
+.PHONY: package
+package:
+	./package.pl GenJyuuGothic-ExtraLight GenJyuuGothic 250
+	./package.pl GenJyuuGothic-Light GenJyuuGothic 300
+	./package.pl GenJyuuGothic-Normal GenJyuuGothic 350
+	./package.pl GenJyuuGothic-Regular GenJyuuGothic 400
+	./package.pl GenJyuuGothic-Medium GenJyuuGothic 500
+	./package.pl GenJyuuGothic-Bold GenJyuuGothic 700
+	./package.pl GenJyuuGothic-Heavy GenJyuuGothic 900
+
+	./package.pl GenJyuuGothic-P-ExtraLight GenJyuuGothicP 250
+	./package.pl GenJyuuGothic-P-Light GenJyuuGothicP 300
+	./package.pl GenJyuuGothic-P-Normal GenJyuuGothicP 350
+	./package.pl GenJyuuGothic-P-Regular GenJyuuGothicP 400
+	./package.pl GenJyuuGothic-P-Medium GenJyuuGothicP 500
+	./package.pl GenJyuuGothic-P-Bold GenJyuuGothicP 700
+	./package.pl GenJyuuGothic-P-Heavy GenJyuuGothicP 900
+
+	./package.pl GenJyuuGothic-Monospace-ExtraLight GenJyuuGothicMonospace 250
+	./package.pl GenJyuuGothic-Monospace-Light GenJyuuGothicMonospace 300
+	./package.pl GenJyuuGothic-Monospace-Normal GenJyuuGothicMonospace 350
+	./package.pl GenJyuuGothic-Monospace-Regular GenJyuuGothicMonospace 400
+	./package.pl GenJyuuGothic-Monospace-Medium GenJyuuGothicMonospace 500
+	./package.pl GenJyuuGothic-Monospace-Bold GenJyuuGothicMonospace 700
+	./package.pl GenJyuuGothic-Monospace-Heavy GenJyuuGothicMonospace 900
