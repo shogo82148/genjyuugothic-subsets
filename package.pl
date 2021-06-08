@@ -3,32 +3,36 @@
 use strict;
 use warnings;
 
-my ($name, $font_family, $font_weight) = @ARGV;
+my @variants = <>;
 
-system("rm", "-rf", "dist/$name");
-system("mkdir", "-p", "dist/$name");
-my $hash = `cd subsets/$name; sha256sum *.woff2 | sha256sum -`;
-$hash =~ s/[^0-9a-fA-F]//g;
+for (@variants) {
+    my ($name, $font_family, $font_weight) = split /\s+/, $_;
 
-open my $fh, ">", "dist/$name/$name.css";
+    system("rm", "-rf", "working/$name");
+    system("mkdir", "-p", "working/$name");
+    my $hash = `cd subsets/$name; sha256sum *.woff2 | sha256sum -`;
+    $hash =~ s/[^0-9a-fA-F]//g;
 
-print $fh <<"END";
+    open my $fh, ">", "working/$name/$name.css";
+
+    print $fh <<'END';
 /*
 copyright 2021 Ichinose Shogo (@shogo82148) https://github.com/shogo82148/genjyuugothic-subsets
 copyright 2014 自家製フォント工房 by MM. http://jikasei.me/font/genjyuu/
 M+ OUTLINE FONTS is under the M+ FONTS LICENSE.
 */
+
 END
 
-for my $i(0..119) {
-    open my $unicode, "<", "unicode-range/$i.txt";
-    my $range = do { local $/; <$unicode>};
-    chomp $range;
-    close $unicode;
+    for my $i(0..119) {
+        open my $unicode, "<", "unicode-range/$i.txt";
+        my $range = do { local $/; <$unicode>};
+        chomp $range;
+        close $unicode;
 
-    system("cp", "subsets/$name/$name-$i.woff2", "dist/$name/${name}-${hash}-${i}.woff2");
+        system("cp", "subsets/$name/$name-$i.woff2", "working/$name/${name}-${hash}-${i}.woff2");
 
-    print $fh <<"END";
+        print $fh <<"END";
 /* [$i] */
 \@font-face {
     font-family: '$font_family';
@@ -40,7 +44,12 @@ for my $i(0..119) {
 }
 
 END
-}
-close $fh;
+    }
+    close $fh;
 
-system("cd dist/$name; zip -r ../$name.zip .");
+    my $version = `cat VERSION`;
+    chomp $version;
+
+    system("mkdir", "-p", "dist");
+    system("cd working/$name; zip -r ../../dist/$name-$version.zip .");
+}

@@ -1,2 +1,4 @@
 *.zip
-/dist
+/dist/
+/working/
+/gh-pages/
