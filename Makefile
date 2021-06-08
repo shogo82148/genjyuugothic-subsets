@@ -8,3 +8,12 @@ unicode-range: noto-sans-jp.css
 
 genjyuugothic.zip:
 	curl -L -o $@ 'https://ja.osdn.net/frs/chamber_redir.php?m=nchc&f=%2Fusers%2F8%2F8642%2Fgenjyuugothic-20150607.zip'
+
+.PHONY: subsets
+subsets: genjyuugothic.zip unicode-range
+	docker build -t genjyuugothic-fonttools .
+	docker run --name genjyuugothic-fonttools-tmp genjyuugothic-fonttools
+	docker wait genjyuugothic-fonttools-tmp
+	rm -rf subsets
+	docker cp genjyuugothic-fonttools-tmp:/genjyuugothic/dist subsets
+	docker rm genjyuugothic-fonttools-tmp
