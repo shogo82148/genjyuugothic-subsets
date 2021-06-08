@@ -3,10 +3,8 @@ FROM python:3.9
 ENV FONTTOOLS_VERSION=4.24.4
 
 # ref. https://www.mitsue.co.jp/knowledge/blog/frontend/201912/19_0000.html
-RUN curl -sSL -o fonttools.tar.gz https://github.com/fonttools/fonttools/archive/refs/tags/$FONTTOOLS_VERSION.tar.gz \
-    && tar zxvf fonttools.tar.gz \
-    && cd fonttools-$FONTTOOLS_VERSION \
-    && pip install -e . \
+RUN pip install -U pip \
+    && pip install fonttools==$FONTTOOLS_VERSION \
     && pip install brotli
 
 RUN apt-get update && apt-get install -y parallel && apt-get clean && rm -rf /var/lib/apt/lists/*
