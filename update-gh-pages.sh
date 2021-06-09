@@ -14,6 +14,8 @@ fi
 
 cd "$CURRENT/gh-pages"
 git switch gh-pages
+git reset --hard HEAD
+git clean -fd
 git pull origin gh-pages
 
 while read -r line
@@ -175,6 +177,8 @@ cat <<EOF >> "$CURRENT/gh-pages/index.html"
 </html>
 EOF
 
-git add .
-git commit -m "release $VERSION"
-git push -u origin gh-pages
+if [[ -n "${PUBLISH:-}" ]]; then
+    git add .
+    git commit -m "release $VERSION"
+    git push -u origin gh-pages
+fi

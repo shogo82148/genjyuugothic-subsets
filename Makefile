@@ -32,4 +32,4 @@ VERSION=$(shell cat VERSION)
 
 release:
 	ghr -draft $(VERSION) dist
-	./update-gh-pages.sh
+	PUBLISH=1 ./update-gh-pages.sh
