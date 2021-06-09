@@ -2,6 +2,8 @@
 
 use strict;
 use warnings;
+use utf8;
+use Encode qw/encode_utf8/;
 
 my @variants = <>;
 
@@ -15,7 +17,9 @@ for (@variants) {
 
     open my $fh, ">", "working/$name/$name.css";
 
-    print $fh <<'END';
+    print $fh encode_utf8(<<'END');
+@charset "UTF-8";
+
 /*
 copyright 2021 Ichinose Shogo (@shogo82148) https://github.com/shogo82148/genjyuugothic-subsets
 copyright 2014 自家製フォント工房 by MM. http://jikasei.me/font/genjyuu/
@@ -32,7 +36,7 @@ END
 
         system("cp", "subsets/$name/$name-$i.woff2", "working/$name/${name}-${hash}-${i}.woff2");
 
-        print $fh <<"END";
+        print $fh encode_utf8(<<"END");
 /* [$i] */
 \@font-face {
     font-family: '$font_family';
