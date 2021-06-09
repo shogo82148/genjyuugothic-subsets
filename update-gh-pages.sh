@@ -22,6 +22,7 @@ while read -r line
 do
 NAME=$(echo "$line" | cut -f1)
 FAMILY=$(echo "$line" | cut -f2)
+WEIGHT=$(echo "$line" | cut -f3)
 mkdir -p "$CURRENT/gh-pages/$NAME"
 unzip -o "$CURRENT/dist/$NAME-$VERSION.zip" -d "$CURRENT/gh-pages/$NAME"
 cat <<EOF > "$CURRENT/gh-pages/$NAME/index.html"
@@ -35,6 +36,8 @@ cat <<EOF > "$CURRENT/gh-pages/$NAME/index.html"
         <style>
             p {
                 font-family: '${FAMILY}';
+                font-weight: ${WEIGHT};
+                font-style: normal;
             }
             pre {
                 word-break: break-all;
