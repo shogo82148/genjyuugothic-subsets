@@ -26,6 +26,8 @@ subsets: genjyuugothic.zip genjyuugothic-x.zip genjyuugothic-l.zip unicode-range
 
 .PHONY: package
 package:
+	rm -rf working
+	rm -rf dist
 	./package.pl < variants.txt
 
 VERSION=$(shell cat VERSION)
