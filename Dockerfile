@@ -21,9 +21,4 @@ RUN for FONT in *.ttf; do \
     mkdir -p ./dist/${FONT%.ttf} && \
     ls ./unicode-range/*.txt | parallel "pyftsubset ./$FONT --unicodes-file={} --layout-features='*' --flavor=woff2 --output-file=./dist/${FONT%.ttf}/${FONT%.ttf}-{/.}.woff2"; done
 
-# create subsets and convert to WOFF
-RUN for FONT in *.ttf; do \
-    mkdir -p ./dist/${FONT%.ttf} && \
-    ls ./unicode-range/*.txt | parallel "pyftsubset ./$FONT --unicodes-file={} --layout-features='*' --flavor=woff --output-file=./dist/${FONT%.ttf}/${FONT%.ttf}-{/.}.woff"; done
-
 CMD ["/bin/true"]
