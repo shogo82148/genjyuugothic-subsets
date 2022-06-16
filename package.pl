@@ -35,7 +35,6 @@ END
         close $unicode;
 
         system("cp", "subsets/$name/$name-$i.woff2", "working/$name/${name}-${hash}-${i}.woff2");
-        system("cp", "subsets/$name/$name-$i.woff", "working/$name/${name}-${hash}-${i}.woff");
 
         print $fh encode_utf8(<<"END");
 /* [$i] */
@@ -44,8 +43,7 @@ END
     font-style: normal;
     font-weight: $font_weight;
     font-display: swap;
-    src: url(./${name}-${hash}-${i}.woff2) format('woff2'),
-        url(./${name}-${hash}-${i}.woff) format('woff');
+    src: url(./${name}-${hash}-${i}.woff2) format('woff2');
     unicode-range: $range;
 }
 
